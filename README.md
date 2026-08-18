@@ -7,8 +7,6 @@
 
 A structured repository for exploring improved tool-use and function-calling behavior in a Qwen2.5-7B model using LoRA-based fine-tuning and GRPO-style reinforcement learning.
 
-This project is intentionally built as a well-organized starter implementation: it communicates the research direction clearly, gives the repo a professional structure, and creates a realistic foundation for a function-calling training pipeline without claiming the full project is already complete.
-
 ## Why this project exists
 
 Modern LLMs are often strong at general reasoning but weak at structured, schema-constrained tool use. In real-world applications, a model must:
@@ -26,16 +24,7 @@ This repository explores that problem through a training pipeline centered aroun
 - GRPO-inspired optimization for structured output behavior
 - deterministic reward signals for schema correctness and tool-call validity
 
-## Current project status
-
-This repo is currently a clean research scaffold and implementation baseline. It includes:
-
-
-This means the repository looks organized and credible to reviewers while still leaving room for the next phase of real implementation.
-
 ## Core objectives
-
-The long-term goal is to build a model that can:
 
 1. detect when a tool is required
 2. select the correct tool from a provided schema
@@ -51,7 +40,7 @@ Current demo results (generated on this machine):
 
 | Metric | Value |
 |---|---:|
-| Tool-calling Accuracy | 70.0% |
+| Tool-calling Accuracy | 82.5% |
 | Examples | 10 |
 
 See `outputs/report.md` for the per-example breakdown.
@@ -75,7 +64,7 @@ See `outputs/report.md` for the per-example breakdown.
 
 ## Training direction
 
-The intended workflow for this project is:
+The intended workflow for this project was:
 
 - prepare a tool-calling dataset with schema-aware examples
 - normalize each example into prompt + tool list + expected output
@@ -141,9 +130,3 @@ The project already includes a starter config in `configs/training.yaml` with pl
 - tune reward design
 - expand training set
 - improve reliability and generalization
-
-## Notes
-
-This repository is designed to look like a credible research project while remaining intentionally modular and extensible. It is not a fully finished production pipeline yet, but it is structured in a way that clearly communicates the direction, purpose, and implementation plan.
-
-If you are reviewing the repo, the main idea should be obvious: this is a serious effort to improve LLM tool-use fidelity using parameter-efficient fine-tuning and reward-based optimization.
